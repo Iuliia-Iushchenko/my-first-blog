@@ -8,23 +8,12 @@
         <a href="/">Julia's blog</a>
       </h1>
     </div>
+    {% for post in posts %}
     <div>
-      <p>published: 10.05.2022, 12:14</p>
-      <h2><a href="">My first post</a></h2>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus
-        minima sunt perferendis vel unde facere cupiditate totam. Iusto sunt
-        optio laudantium repudiandae libero, in veniam.
-      </p>
+      <p>published: {{ post.published_date }}</p>
+      <h2><a href="">{{ post.title }}</a></h2>
+      <p>{{ post.text|linebreaksbr }}</p>
     </div>
-    <div>
-      <p>published: 10.05.2022, 12:14</p>
-      <h2><a href="">My second post</a></h2>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus
-        minima sunt perferendis vel unde facere cupiditate totam. Iusto sunt
-        optio laudantium repudiandae libero, in veniam.
-      </p>
-    </div>
+    {% endfor %}
   </body>
 </html>
